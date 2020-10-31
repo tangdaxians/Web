@@ -3,9 +3,7 @@
 		<h1>{{ msg }}</h1>
 		
 		<div class="box">
-			<to name="vbutton"/>
-			<to name="ebutton"/>
-			<to name="etag"/>
+			<to v-for="(item,index) in tolist" :name="item.name" :key="index"/>
 		</div>
 		
 		<router-view></router-view>
@@ -18,8 +16,12 @@ export default {
 	name: 'Index',
 	data () {
 		return {
-			msg: 'Git'
+			msg: 'Git',
+			tolist:[]
 		}
+	},
+	created(){
+		this.tolist = this.$router.options.routes[0].children;
 	}
 }
 </script>
