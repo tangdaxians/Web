@@ -1,15 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+
+import vr from "./modules/vant"
+import er from "./modules/element"
 
 Vue.use(Router)
 
+const originalPush = Router.prototype.push
+   Router.prototype.push = function push(location) {
+   return originalPush.call(this, location).catch(err => err)
+}
+
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
+	mode:"history",
+	routes: [
+		{
+			path: '/',
+			name: 'Index',
+			component: resolve => require(['@/components/index'], resolve),
+			children:[ ...vr, ...er ]
+		}
+	]
 })

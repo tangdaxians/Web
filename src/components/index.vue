@@ -1,6 +1,11 @@
 <template>
-	<div class="hello">
+	<div class="box">
 		<h1>{{ msg }}</h1>
+		
+		<to name="vbutton"/>
+		<to name="ebutton"/>
+		
+		<router-view></router-view>
 	</div>
 </template>
 
@@ -16,10 +21,10 @@ export default {
 </script>
 
 <style scoped>
-.hello {
+.box {
 	width: 100%;
 	height: auto;
 	text-align: center;
-	line-height: 200px;
+	line-height: 100px;
 }
 </style>

@@ -5,12 +5,22 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 
+import 'vant/lib/button/style';
+import Vant from 'vant';
+Vue.use(Vant);
 
+import 'element-ui/lib/theme-chalk/index.css';
+import Element from 'element-ui'
+Vue.use(Element);
+
+import Btn from '@/components/btn'
+Vue.component('to',Btn);
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
+
   el: '#app',
   router,
   components: { App },
