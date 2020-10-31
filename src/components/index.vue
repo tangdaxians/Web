@@ -5,6 +5,7 @@
 		<div class="box">
 			<to name="vbutton"/>
 			<to name="ebutton"/>
+			<to name="etag"/>
 		</div>
 		
 		<router-view></router-view>
