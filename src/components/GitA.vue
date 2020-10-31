@@ -7,8 +7,10 @@
 <script>
 export default {
 	name: 'GitA',
-	props:{
-		msg
+	data(){
+		return{
+			msg:"Git A"
+		}
 	}
 }
 </script>
