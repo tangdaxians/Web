@@ -6,10 +6,10 @@
 
 <script>
 export default {
-	name: 'GitB',
+	name: 'GitA',
 	data(){
 		return{
-			msg:"Git B"
+			msg:"Git A"
 		}
 	}
 }
