@@ -9,7 +9,7 @@ export default {
 	name: 'HelloWorld',
 	data () {
 		return {
-			msg: 'Git 1'
+			msg: 'Git'
 		}
 	}
 }
