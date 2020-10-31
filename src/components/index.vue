@@ -2,16 +2,19 @@
 	<div class="box">
 		<h1>{{ msg }}</h1>
 		
-		<to name="vbutton"/>
-		<to name="ebutton"/>
+		<div class="box">
+			<to name="vbutton"/>
+			<to name="ebutton"/>
+		</div>
 		
 		<router-view></router-view>
+		
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'HelloWorld',
+	name: 'Index',
 	data () {
 		return {
 			msg: 'Git'

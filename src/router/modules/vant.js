@@ -2,7 +2,7 @@ const vantRouter = [
 	{
 		path:"vbutton",
 		name:"vbutton",
-		components:resolve => require(['@/components/Vant/button'], resolve),
+		component:resolve => require(['@/components/Vant/button'], resolve),
 	},
 ]
 

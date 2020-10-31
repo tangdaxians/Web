@@ -2,7 +2,7 @@ const elementRouter = [
 	{
 		path:"ebutton",
 		name:"ebutton",
-		components: resolve => require(['@/components/Element/button'], resolve),
+		component: resolve => require(['@/components/Element/button'], resolve),
 	},
 ]
 
