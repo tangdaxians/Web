@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import vr from "./modules/vant"
-import er from "./modules/element"
-
 Vue.use(Router)
 
 const originalPush = Router.prototype.push
@@ -11,10 +8,22 @@ const originalPush = Router.prototype.push
 	return originalPush.call(this, location).catch(err => err)
 }
 
-console.log("OK");
-var a = ["a","b","c","d"]
-a.forEach(i=>{
-	console.log(i);
+const Routers = [];
+
+const e = require.context('@/components/Element', false, /\.vue$/)
+const v = require.context('@/components/Vant', false, /\.vue$/)
+
+e.keys().map(e).forEach(i=>{
+	var name = i.default.name;
+	Routers.push({
+		path: name, name, component: resolve => require(['@/components/Element/'+name.slice(1)], resolve),
+	});
+})
+v.keys().map(v).forEach(i=>{
+	var name = i.default.name;
+	Routers.push({
+		path: name, name, component: resolve => require(['@/components/Vant/'+name.slice(1)], resolve),
+	});
 })
 
 export default new Router({
@@ -24,7 +33,7 @@ export default new Router({
 			path: '/',
 			name: 'Index',
 			component: resolve => require(['@/components/index'], resolve),
-			children:[ ...vr, ...er ]
+			children:[...Routers]
 		}
 	]
 })
