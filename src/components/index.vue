@@ -16,7 +16,7 @@ export default {
 	name: 'Index',
 	data () {
 		return {
-			msg: 'Vue - Git',
+			msg: 'Github - Gitee',
 			tolist:[]
 		}
 	},
