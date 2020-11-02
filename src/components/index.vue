@@ -16,7 +16,7 @@ export default {
 	name: 'Index',
 	data () {
 		return {
-			msg: 'Git',
+			msg: 'Vue - Git',
 			tolist:[]
 		}
 	},

@@ -11,6 +11,12 @@ const originalPush = Router.prototype.push
 	return originalPush.call(this, location).catch(err => err)
 }
 
+console.log("OK");
+var a = ["a","b","c","d"]
+a.forEach(i=>{
+	console.log(i);
+})
+
 export default new Router({
 	mode:"history",
 	routes: [
